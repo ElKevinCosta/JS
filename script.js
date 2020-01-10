@@ -298,10 +298,55 @@ let reverseX = arrayFinal.reverse();
 })(window,document);
 */
 
-//Validar o tipo TYPEOF
+//Validar o tipo de dado (number,string,boolean,object)TYPEOF
 //EX: typeof arr[i] === "Number"
 /*
 //Validar se é um array puro
 console.log(Array.isArray(NOME DO ARRAY));
 //JSON da para fazer varias funçoes com ela serve para AJAX
 */
+
+
+//Selecionar elementos htlm pelo "ID" ou CLASS
+
+(function readyJS(win,doc)){
+    "use strict"
+
+    /*let teste=doc.getElementByID("test");
+    //Adicionar uma class
+    teste.className="New Class";
+    //Modificar a cor
+    teste.style.color="Pink";*/
+
+    /*
+    //Se tiver uma classe com varios botoes vai buscar todos
+    let myClass =doc.getElementByClassName("btn");
+    //Pushar o primeiro botao dentro da class
+    myClass[0].innerHTML*/
+
+    /*
+    //Por query # (um ID), . (Uma Class) , "[ex. title="Teste"]" por atributo, quando uma class vai buscar o primeiro da lista
+    let byQuery= doc.querySelector("#teste");*/
+
+    //Selecionar tudo e percorrer exemplo butoes
+    //INNERHTLM vai buscar a referencia em htlm do que estamosa selecionar
+
+    let byQueryAll= doc.querySelectorAll(".btn");
+    for(let i=0; i<byQueryAll.length; i++){
+        byQueryAll[i].addEventListener("Click", function(){
+
+            //Netes caso ao clicar em cada botao diz que cliclamos no botao + o nome do botao
+            alert ("Click button: " + this.innerHTML);
+
+        })
+
+
+
+    }
+
+
+
+}
+
+
+
