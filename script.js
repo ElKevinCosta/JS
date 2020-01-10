@@ -309,8 +309,8 @@ console.log(Array.isArray(NOME DO ARRAY));
 
 //Selecionar elementos htlm pelo "ID" ou CLASS
 
-(function readyJS(win,doc)){
-    "use strict"
+/*(function readyJS(win,doc)){
+    "use strict"*/
 
     /*let teste=doc.getElementByID("test");
     //Adicionar uma class
@@ -330,7 +330,7 @@ console.log(Array.isArray(NOME DO ARRAY));
 
     //Selecionar tudo e percorrer exemplo butoes
     //INNERHTLM vai buscar a referencia em htlm do que estamosa selecionar
-
+/*
     let byQueryAll= doc.querySelectorAll(".btn");
     for(let i=0; i<byQueryAll.length; i++){
         byQueryAll[i].addEventListener("Click", function(){
@@ -341,12 +341,11 @@ console.log(Array.isArray(NOME DO ARRAY));
         })
 
 
-
     }
 
 
 
 }
-
+*/
 
 
