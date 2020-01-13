@@ -3,7 +3,7 @@
 
     let btn = doc.querySelector("#btn");
     let sel = doc.querySelector("#select");
-    let btn2 = doc.querySelectorAll(".button");
+    let btns = doc.querySelectorAll(".button");
     let btn4 = doc.querySelector("#btn4");
     let main = doc.querySelector(".main");
     let myarr = ["Joao", "Andre", "Diogo"];
@@ -12,6 +12,10 @@
     let menu = doc.querySelector(".menu");
     //defenir uma variavel para o body do html
     let body = doc.querySelector("body");
+    let form1 = doc.querySelector("#form1");
+    let inputext = doc.querySelector("#inputext");
+    let txtArea = doc.querySelector("#txtArea");
+    let lengthArea= doc.querySelector("#lengthArea");
 
 
     //Funçao para alertar
@@ -30,6 +34,8 @@
 
     }
 
+
+    //Função para quando se carrega num botão este muda a cor do backgroud da pagina
     function changeColor(event) {
 
         //Visualizar as propriedades do objecto
@@ -40,12 +46,15 @@
 
     }
 
-    for (let i = 0; i < btn2.length; i++) {
 
-        btn2[i].addEventListener("click", changeColor, false);
+    //Ciclo para percorrer a classe button 
+    for (let i = 0; i < btns.length; i++) {
+
+        btns[i].addEventListener("click", changeColor, false);
 
     }
 
+    //Quando se carrega num botão muda o nome do botão para gay
     function alertCriado(event) {
 
         if (event.target.id === 'newButton') {
@@ -54,6 +63,7 @@
 
     }
 
+    //Função que vai ao array buscar o ultimo nome inscrito no mesmo
     function criarNome(myarr) {
 
         name = myarr.pop();
@@ -67,6 +77,7 @@
     }
 
 
+    //Função para criar um botão novo apos se clicar num botão
     function createElement(event) {
 
 
@@ -113,6 +124,33 @@
 
     }
 
+    //Validar se o campo esta preenchido
+    function validarTexto(event){
+
+
+        if(event.target.value==""){
+
+            alert("Preencha o campo texto!")
+
+        }
+
+    }
+
+    function countArea(event){
+
+        lengthArea.innerHTML= event.target.textLength;
+
+
+    }
+
+    txtArea.addEventListener("blur",validarTexto,false);
+    txtArea.value="Digite o seu texto";
+    //keyup quando escrevemos do teclado
+    txtArea.addEventListener("keyup",countArea,false);
+    //Blur quando deixamos o evento para outro
+    inputext.addEventListener("blur", validarTexto,false);
+    //na variavel inputext dar por pre-definição a palavra texto no campo em htlm
+    inputext.value="Texto";
     btn5.addEventListener("click", toggle, false);
 
     btn4.addEventListener("click", createElement, false);

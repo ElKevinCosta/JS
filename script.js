@@ -345,10 +345,12 @@ let byQuery= doc.querySelector("#teste");*/
 
 }
 */
+/*
 //Expressoes regulares com String
 
 let msg="ola o antonio é um senhor maluco";
 
+//Devolve um array com as posições do que estamos a pesquisar
 // /aqui dentro colocamos o que queremos pesquisar/
 //g--> Global i-->ignore case, vai procurar independentemente do que colocarmos(maiscula ou minuscula), m-->multiple lines
 // /P|e/ vai procurar palavras com P ou e a mesma coisa /[Pe]/
@@ -359,10 +361,37 @@ let msg="ola o antonio é um senhor maluco";
 // /(^antonio)/ devolver o texto que comecar por aquela letra ou palavra
 // /(maluco$)/ devolver o texto que acabe com aquela letra ou palavra
 //Validar se existe alguma palvra com 2 rr /r{2}/ 
+// /\d devolve todos os digitos na string
+// /\D tudo menos digitos
+// /\w todos os caracteres alfa numericos menos espaços
+// /\W tudo o que não é alfa numerico
+// /\s devolve os espaços
+// /\S tudo o que não é espaço
+// \. para pesquisar mesmo um ponto
 
 let regex =/e/gim ;
 
+// Match retornar uma pesquisa
+let result =msg.match(regex);
 
-let result =msg.match();
+//Split corta a string pelo que queremos
+// exemeplo que queremos que nos digitos ele divida a string vamos usar o /\d
+let result2 = msg.split(regex);
+
+//Replace, procurar na string e substituir pelo que queremos
+let result = msg.replace(regex,"ele é gay");
+//função dentro do replace
+let result = msg.replace(regex,function(x){
+
+    return "__"+x.toUpperCase()+"__";
+
+});
+
+
+
+//Search pesquisar na string, devolve o numero do caracter se verdadeiro ou -1 se falso
+let result = msg.search(regex);
+
+*/
 
 
