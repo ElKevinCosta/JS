@@ -1,0 +1,10 @@
+
+/*Não aparecer esta classe na pagina*/
+.menu{display:none;}
+
+/*Criar uma classe para fazer aparecer ou retirar*/
+.show{display: block;}
+
+/*Colocar um apontador no rato naquele botão especifico*/
+#btn5{cursor: pointer;}
+

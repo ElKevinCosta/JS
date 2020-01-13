@@ -14,7 +14,7 @@ let obj = {
     // func: myName()
 }; // declarar um objecto --> o mais completo e pode conter propriedades e metodos
 
-//Criar uma caixa de dialogo 
+//Criar uma caixa de dialogo
 confirm("Deseja mesmo apagar este dado ? \n se desejar apagar clique 'ok'")
 
 //Criar caixa de prompt
@@ -259,7 +259,7 @@ let lastIndexOf = arrayFinal.lastIndexOf("S");
 //JOIN replica todo o array transformando-a numa String
 let joinX = arrayFinal.join();
 
-//MAP mapear os valores do array 
+//MAP mapear os valores do array
 let mapFinal = [];
 let mapX = arrayFinal.map(
     function verifyelements(elem, ind, obj) {
@@ -292,7 +292,7 @@ let reverseX = arrayFinal.reverse();
 //IIFE(imediately-invoed function expression)--> Permite usar uma funçaõ sem a chamar e reservar os elemntos da função para ela mesmo e apenas
 (function(win,doc){
     "use strict";
-    let x=20; 
+    let x=20;
     console.log(x); // apenas permite fazer o console.log dentro da função
 
 })(window,document);
@@ -312,21 +312,21 @@ console.log(Array.isArray(NOME DO ARRAY));
 /*(function readyJS(win,doc)){
     "use strict"*/
 
-    /*let teste=doc.getElementByID("test");
-    //Adicionar uma class
-    teste.className="New Class";
-    //Modificar a cor
-    teste.style.color="Pink";*/
+/*let teste=doc.getElementByID("test");
+//Adicionar uma class
+teste.className="New Class";
+//Modificar a cor
+teste.style.color="Pink";*/
 
-    /*
-    //Se tiver uma classe com varios botoes vai buscar todos
-    let myClass =doc.getElementByClassName("btn");
-    //Pushar o primeiro botao dentro da class
-    myClass[0].innerHTML*/
+/*
+//Se tiver uma classe com varios botoes vai buscar todos
+let myClass =doc.getElementByClassName("btn");
+//Pushar o primeiro botao dentro da class
+myClass[0].innerHTML*/
 
-    /*
-    //Por query # (um ID), . (Uma Class) , "[ex. title="Teste"]" por atributo, quando uma class vai buscar o primeiro da lista
-    let byQuery= doc.querySelector("#teste");*/
+/*
+//Por query # (um ID), . (Uma Class) , "[ex. title="Teste"]" por atributo, quando uma class vai buscar o primeiro da lista
+let byQuery= doc.querySelector("#teste");*/
 
     //Selecionar tudo e percorrer exemplo butoes
     //INNERHTLM vai buscar a referencia em htlm do que estamosa selecionar
@@ -343,9 +343,26 @@ console.log(Array.isArray(NOME DO ARRAY));
 
     }
 
-
-
 }
 */
+//Expressoes regulares com String
+
+let msg="ola o antonio é um senhor maluco";
+
+// /aqui dentro colocamos o que queremos pesquisar/
+//g--> Global i-->ignore case, vai procurar independentemente do que colocarmos(maiscula ou minuscula), m-->multiple lines
+// /P|e/ vai procurar palavras com P ou e a mesma coisa /[Pe]/
+// [A-Z], pesquisar de A a Z [A-Za-z0-9],pequisar de A a Z maiscula e miniscula e de 0 a 9
+// /(Ola)/ , quando dentro de parenteses pesquisa exactamente a palavra que esta la dentro
+// se (150+) vai procurar o 150 + tudo igual ao ultimo numero neste caso 0 ex: 15000,150000,1500000
+// Devolver o texto todo /.+/g
+// /(^antonio)/ devolver o texto que comecar por aquela letra ou palavra
+// /(maluco$)/ devolver o texto que acabe com aquela letra ou palavra
+//Validar se existe alguma palvra com 2 rr /r{2}/ 
+
+let regex =/e/gim ;
+
+
+let result =msg.match();
 
 

@@ -4,11 +4,15 @@
     let btn = doc.querySelector("#btn");
     let sel = doc.querySelector("#select");
     let btn2 = doc.querySelectorAll(".button");
-    let body = doc.querySelector("body");
     let btn4 = doc.querySelector("#btn4");
     let main = doc.querySelector(".main");
     let myarr = ["Joao", "Andre", "Diogo"];
     let name = "";
+    let btn5 = doc.querySelector("#btn5");
+    let menu = doc.querySelector(".menu");
+    //defenir uma variavel para o body do html
+    let body = doc.querySelector("body");
+
 
     //Funçao para alertar
     function alertar(event) {
@@ -43,7 +47,7 @@
     }
 
     function alertCriado(event) {
-        
+
         if (event.target.id === 'newButton') {
             event.target.innerHTML = "GAY";
         }
@@ -86,9 +90,40 @@
 
     }
 
+    function toggle(event) {
+
+        //se conter a classe show criada em css
+        if (menu.classList.contains("show")) {
+
+            //Remover a classe show e aprensentar uma imagem
+            menu.classList.remove("show");
+            btn5.setAttribute("src", "imag/botao1.png");
+            body.style.backgroundColor="Grey";
+
+        } else {
+            //Adcionar a classe show e apresentar uma imagems
+            menu.classList.add("show");
+            btn5.setAttribute("src", "imag/botao2.jpg");
+            body.style.backgroundColor="white";
+
+        }
+
+
+
+
+    }
+
+    btn5.addEventListener("click", toggle, false);
+
     btn4.addEventListener("click", createElement, false);
-    
+
     sel.addEventListener("change", alertar, false);
     btn.addEventListener("click", alertar, false);
+
+
+
+
+
+
 
 })(window, document);
