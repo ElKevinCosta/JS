@@ -247,9 +247,11 @@
 
         let ajax=new XMLHttpRequest();
         console.log(ajax.status);
-        ajax.open('GET','ajax.json');
+       ajax.open('GET','ajax.json');
         ajax.send();
-        console.log(ajax.status);
+
+
+      
        /* ajax.open('GET','ajax.json');
         ajax.onreadystatechange=function(){
             if(ajax.status=== 200 && ajax.readyState === 4){
