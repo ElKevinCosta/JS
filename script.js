@@ -394,4 +394,5 @@ let result = msg.search(regex);
 
 */
 
-
+//setTimeOut(função,tempo para aparecer segundos); Fica a escuta a espera que passe aquele tempo para exibir
+//setInterval(função,tempo para aparecer segundos); Fica a escuta e sempre que passar aquele tempo ele executa repetidamente

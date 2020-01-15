@@ -1,3 +1,4 @@
+
 (function readyJS(win, doc) {
     'use strict'
 
@@ -15,7 +16,12 @@
     let form1 = doc.querySelector("#form1");
     let inputext = doc.querySelector("#inputext");
     let txtArea = doc.querySelector("#txtArea");
-    let lengthArea= doc.querySelector("#lengthArea");
+    let lengthArea = doc.querySelector("#lengthArea");
+    let check = doc.querySelector("#check");
+    let radio = doc.getElementsByName("gender");
+    let galeria = doc.querySelector(".galeria");
+    let files = doc.querySelector("#img");
+    let btnDb=doc.querySelector("#btnDb");
 
 
     //Funçao para alertar
@@ -109,13 +115,13 @@
             //Remover a classe show e aprensentar uma imagem
             menu.classList.remove("show");
             btn5.setAttribute("src", "imag/botao1.png");
-            body.style.backgroundColor="Grey";
+            body.style.backgroundColor = "Grey";
 
         } else {
             //Adcionar a classe show e apresentar uma imagems
             menu.classList.add("show");
             btn5.setAttribute("src", "imag/botao2.jpg");
-            body.style.backgroundColor="white";
+            body.style.backgroundColor = "white";
 
         }
 
@@ -125,10 +131,10 @@
     }
 
     //Validar se o campo esta preenchido
-    function validarTexto(event){
+    function validarTexto(event) {
 
 
-        if(event.target.value==""){
+        if (event.target.value == "") {
 
             alert("Preencha o campo texto!")
 
@@ -136,32 +142,134 @@
 
     }
 
-    function countArea(event){
+    function countArea(event) {
 
-        lengthArea.innerHTML= event.target.textLength;
+        lengthArea.innerHTML = event.target.textLength;
 
 
     }
 
-    txtArea.addEventListener("blur",validarTexto,false);
-    txtArea.value="Digite o seu texto";
+
+    function valOption(event) {
+
+        if (event.target.selectedIndex == 0) {
+
+            alert("Selecione uma opcao!");
+
+        }
+
+    }
+
+    txtArea.addEventListener("blur", validarTexto, false);
+    txtArea.value = "Digite o seu texto";
     //keyup quando escrevemos do teclado
-    txtArea.addEventListener("keyup",countArea,false);
+    txtArea.addEventListener("keyup", countArea, false);
     //Blur quando deixamos o evento para outro
-    inputext.addEventListener("blur", validarTexto,false);
+    inputext.addEventListener("blur", validarTexto, false);
     //na variavel inputext dar por pre-definição a palavra texto no campo em htlm
-    inputext.value="Texto";
+    inputext.value = "Texto";
     btn5.addEventListener("click", toggle, false);
 
     btn4.addEventListener("click", createElement, false);
 
-    sel.addEventListener("change", alertar, false);
+    sel.addEventListener("change", valOption, false);
     btn.addEventListener("click", alertar, false);
 
 
 
+    //CheckBox não esta a funcionar 
+
+    if (check.checked == false) {
+
+        alert("Aceite os termos!");
+
+
+    }
+
+
+    //Radio
+
+    function radioTeste(event) {
+
+        if (event.target.value == "Male") {
+
+            alert("Gay");
+
+        } else {
+
+            alert("fufa");
+        }
+
+    }
+
+    for (let i = 0; i < radio.length; i++) {
+
+        radio[i].addEventListener("click", radioTeste, false);
+
+
+    }
+
+    //dar um previou da imagem 
+    function prevImag(event) {
+
+        //cada vez que carregamos uma imagem ele substitui pelas novas
+        galeria.innerHTML="";
+
+        let file = event.target.files;
+        for (let i = 0; i < file.length; i++) {
+
+            //propriedade do  js,constructor
+            let reader = new FileReader();
+            reader.onload = function (event) {
+                //retirar o url da imagem carregada
+                let urlImg = event.target.result;
+                //criar um novo elemento do tipo imagem
+                let newImg = doc.createElement("img");
+                //Atribuir o url a nova imagem
+                newImg.setAttribute("Src",urlImg);
+                //defenir a apresentação da imagem
+                newImg.style="width: 100px; margin: 5px";
+                //defenir a apresentação da imagem na div criada para o efeito
+                galeria.appendChild(newImg);
+
+            }
+            //ler a função anterior como um  URl
+            reader.readAsDataURL(file[i]);
+
+        }
+
+    }
+
+    files.addEventListener("change", prevImag, false);
+
+
+    function showDb(){
+
+        let ajax=new XMLHttpRequest();
+        console.log(ajax.status);
+        ajax.open('GET','ajax.json');
+        ajax.send();
+        console.log(ajax.status);
+       /* ajax.open('GET','ajax.json');
+        ajax.onreadystatechange=function(){
+            if(ajax.status=== 200 && ajax.readyState === 4){
+
+                console.log("ok");
+            }else {
+
+                console.log(ajax.status);
+            }
+            
+
+        };
+        ajax.send();
+*/
+    }
+
+    btnDb.addEventListener("click",showDb, false);
 
 
 
 
 })(window, document);
+
