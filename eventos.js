@@ -21,7 +21,7 @@
     let radio = doc.getElementsByName("gender");
     let galeria = doc.querySelector(".galeria");
     let files = doc.querySelector("#img");
-    let btnDb=doc.querySelector("#btnDb");
+    let btnDb = doc.querySelector("#btnDb");
 
 
     //Funçao para alertar
@@ -213,7 +213,7 @@
     function prevImag(event) {
 
         //cada vez que carregamos uma imagem ele substitui pelas novas
-        galeria.innerHTML="";
+        galeria.innerHTML = "";
 
         let file = event.target.files;
         for (let i = 0; i < file.length; i++) {
@@ -226,9 +226,9 @@
                 //criar um novo elemento do tipo imagem
                 let newImg = doc.createElement("img");
                 //Atribuir o url a nova imagem
-                newImg.setAttribute("Src",urlImg);
+                newImg.setAttribute("Src", urlImg);
                 //defenir a apresentação da imagem
-                newImg.style="width: 100px; margin: 5px";
+                newImg.style = "width: 100px; margin: 5px";
                 //defenir a apresentação da imagem na div criada para o efeito
                 galeria.appendChild(newImg);
 
@@ -243,32 +243,32 @@
     files.addEventListener("change", prevImag, false);
 
 
-    function showDb(){
+    function showDb() {
 
-        let ajax=new XMLHttpRequest();
-        console.log(ajax.status);
-       ajax.open('GET','ajax.json');
-        ajax.send();
+        let ajax = new XMLHttpRequest();
+        //pedido de requisição
+        ajax.open('GET', 'ajax.json');
+        ajax.onreadystatechange = function () {
+            if (ajax.status === 200 && ajax.readyState === 4) {
+
+                console.log("Pedido enviado e recebido!")
+                console.log(ajax.responseText);
 
 
-      
-       /* ajax.open('GET','ajax.json');
-        ajax.onreadystatechange=function(){
-            if(ajax.status=== 200 && ajax.readyState === 4){
+            } else {
 
-                console.log("ok");
-            }else {
+                console.log("Algo no pedido não está bem!")
 
-                console.log(ajax.status);
             }
-            
+
 
         };
+        //envio do pedido
         ajax.send();
-*/
+
     }
 
-    btnDb.addEventListener("click",showDb, false);
+    btnDb.addEventListener("click", showDb, false);
 
 
 
