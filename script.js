@@ -328,8 +328,8 @@ myClass[0].innerHTML*/
 //Por query # (um ID), . (Uma Class) , "[ex. title="Teste"]" por atributo, quando uma class vai buscar o primeiro da lista
 let byQuery= doc.querySelector("#teste");*/
 
-    //Selecionar tudo e percorrer exemplo butoes
-    //INNERHTLM vai buscar a referencia em htlm do que estamosa selecionar
+//Selecionar tudo e percorrer exemplo butoes
+//INNERHTLM vai buscar a referencia em htlm do que estamosa selecionar
 /*
     let byQueryAll= doc.querySelectorAll(".btn");
     for(let i=0; i<byQueryAll.length; i++){
@@ -396,3 +396,64 @@ let result = msg.search(regex);
 
 //setTimeOut(função,tempo para aparecer segundos); Fica a escuta a espera que passe aquele tempo para exibir
 //setInterval(função,tempo para aparecer segundos); Fica a escuta e sempre que passar aquele tempo ele executa repetidamente
+
+//AJAX
+
+//pedido de requisição GET--> Pedir POST-->Enviar
+//ajax.open('GET', 'ajax.json');
+//envio do pedido
+//ajax.send();
+//Quando o pedido altera o estado
+//ajax.onreadystatechange = function () {}
+//Quando o pedido começa ,podemos fazer alterações as nossas coisas"botoes"
+//ajax.onloadstart=fuction(){}
+//Quando o pedido esta em progresso
+//ajax.unpload.onprogress=fuction(){}
+//Quando o pedido está terminado
+//ajax.onloadend=function(){}
+/*
+//Herença prototype, usar o prototype so para situações onde os dados não são alterados
+function pessoa(name, year, funcao) {
+
+    this.name = name;
+    this.year = year;
+    this.friends = ["carlos", "joao"];
+    this.funcao = funcao;
+}
+//Neste caso todos os obj vão receber por herança a cidade Brr
+pessoa.prototype.cidade = "Brr";
+//adicionar dados a ultima posição do array friends numa nova pessoa
+let obj = new pessoa();
+obj.friends.push("ana");
+
+pessoa.prototype.salario = function () {
+
+    if (this.funcao === "patrao") {
+        return 500;
+    } else if (this.funcao === "chupapilas") {
+
+        return 0;
+    }
+
+
+
+}
+
+let obj2 = new pessoa("chris", "2010", "chupapilas");
+console.log(obj2.salario());
+*/
+/*
+//Usar 2 paginas de java script entre sim com Herença Global
+//usar o parametro win
+//1 app nome para a nova funçao do window e 2 app nome da funçao que estamos a passar
+//Na nova janela de js ja é possivel usar a funça app
+//é possivel usar tambem na pagina de html
+
+function app(){
+
+}
+
+win.app=app;
+
+
+*/

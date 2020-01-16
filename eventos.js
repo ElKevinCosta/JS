@@ -215,6 +215,8 @@
         //cada vez que carregamos uma imagem ele substitui pelas novas
         galeria.innerHTML = "";
 
+
+
         let file = event.target.files;
         for (let i = 0; i < file.length; i++) {
 
@@ -231,12 +233,18 @@
                 newImg.style = "width: 100px; margin: 5px";
                 //defenir a apresentação da imagem na div criada para o efeito
                 galeria.appendChild(newImg);
+                    console.log(event.target);
+
+                
 
             }
+            
             //ler a função anterior como um  URl
             reader.readAsDataURL(file[i]);
 
+
         }
+
 
     }
 
@@ -251,8 +259,19 @@
         ajax.onreadystatechange = function () {
             if (ajax.status === 200 && ajax.readyState === 4) {
 
-                console.log("Pedido enviado e recebido!")
-                console.log(ajax.responseText);
+                console.log("Pedido ao backend enviado e recebido!")
+                //ajax.responseText--> vai pedir o ficheiro json JSON.parse--> retorna um objecto com a informação 
+                let res = JSON.parse(ajax.responseText);
+                console.log(res);
+                //declarar a variavel que vai receber o objecto retorando
+                let car = res.car;
+                //percorrer o objecto para retirar a informação da cor
+                for (let i = 0; i < car.length; i++) {
+
+                    console.log(car[i].color);
+                    console.log(car[i].year);
+
+                }
 
 
             } else {
