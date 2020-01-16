@@ -457,3 +457,7 @@ win.app=app;
 
 
 */
+//Modulos export e import
+//HTML --> <script type"module">
+//export {o que queremos};
+//import {o que queremos} from './directorio.js'
