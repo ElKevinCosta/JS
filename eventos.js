@@ -22,6 +22,23 @@
     let galeria = doc.querySelector(".galeria");
     let files = doc.querySelector("#img");
     let btnDb = doc.querySelector("#btnDb");
+    let rel = doc.querySelector("#result");
+    let resultados = doc.querySelector(".resultados");
+
+
+    function Relogio() {
+
+        let date = new Date();
+        let hora = date.getHours();
+        let minutos = date.getMinutes();
+        let segundos = date.getSeconds();
+        rel.innerHTML = hora + ":" + minutos + ":" + segundos;
+
+        setTimeout(Relogio, 1000);
+
+    }
+
+    Relogio();
 
 
     //Funçao para alertar
@@ -233,12 +250,12 @@
                 newImg.style = "width: 100px; margin: 5px";
                 //defenir a apresentação da imagem na div criada para o efeito
                 galeria.appendChild(newImg);
-                    console.log(event.target);
 
-                
+
+
 
             }
-            
+
             //ler a função anterior como um  URl
             reader.readAsDataURL(file[i]);
 
@@ -289,6 +306,43 @@
 
     btnDb.addEventListener("click", showDb, false);
 
+
+    function mostrar() {
+
+        return this.title+ " " + this.pages;
+    }
+
+    let livros = {
+        title: "Ondas",
+        pages: 18
+    };
+
+    let livros1 = {
+        title: "mares",
+        pages: 24
+    };
+
+    //Utilização do metodo call, de forma a alterar o this na função mostrar, podendo manter o codigo
+    //resultados.innerHTML = mostrar.call(livros);
+
+
+    let ajax=new XMLHttpRequest();
+    ajax.open("GET","Array.js");
+    ajax.onreadystatechange=function(){
+
+        if(ajax.status === 200 && ajax.readyState === 4){
+
+            
+           console.log(ajax.responseText);
+           
+            
+
+
+        }
+
+
+    }
+    ajax.send();
 
 
 
