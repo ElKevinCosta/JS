@@ -324,7 +324,7 @@
 
     //Utilização do metodo call, de forma a alterar o this na função mostrar, podendo manter o codigo
     //resultados.innerHTML = mostrar.call(livros);
-
+    //KK
 
     let ajax=new XMLHttpRequest();
     ajax.open("GET","Array.js");
